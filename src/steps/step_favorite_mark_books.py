@@ -8,7 +8,6 @@ def step_go_to_favorites(context):
     favorites_button = context.page.get_by_test_id('favorites')
     favorites_button.click()
 
-
 @then (u'texten "När du valt, kommer dina favoritböcker att visas här." syns på sidan')
 def step_empty_favorites_list(context):
     favorites_list = context.page.get_by_text('När du valt')
@@ -19,7 +18,6 @@ def step_add_book_to_favorites(context, name):
     add_to_favorites = context.page.get_by_test_id('star-' + name)
     add_to_favorites.click()
     expect(add_to_favorites).to_have_class("star selected")
-
 
 @then (u'texten "När du valt, kommer dina favoritböcker att visas här." syns inte på sidan')
 def step_empty_list_text_not_shown(context):
